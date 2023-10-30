@@ -404,7 +404,6 @@ namespace ProcsDLL.Controllers.InsiderTrading
             Console.WriteLine("HI");
         }
 
-
         public void Display()
         {
             //Console.WriteLine("HI");
