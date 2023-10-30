@@ -397,5 +397,10 @@ namespace ProcsDLL.Controllers.InsiderTrading
                 return httpResponseMessage;
             }
         }
+
+        public void HI()
+        {
+            //Console.WriteLine("HI");
+        }
     }
 }
