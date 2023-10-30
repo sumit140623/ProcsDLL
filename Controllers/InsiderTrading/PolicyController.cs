@@ -450,5 +450,49 @@ namespace ProcsDLL.Controllers.InsiderTrading
                 return httpResponseMessage;
             }
         }
+
+
+        //[Route("DeletePolicy")]
+        //[HttpPost]
+        //[SwaggerOperation(Tags = new[] { "Policy APIs" })]
+        //public PolicyResponse DeletePolicy()
+        //{
+        //    try
+        //    {
+        //        if (HttpContext.Current.Session.Count == 0)
+        //        {
+        //            PolicyResponse objResponse = new PolicyResponse();
+        //            objResponse.StatusFl = false;
+        //            objResponse.Msg = "SessionExpired";
+        //            return objResponse;
+        //        }
+        //        string input1;
+        //        using (System.IO.StreamReader sr = new System.IO.StreamReader(HttpContext.Current.Request.InputStream))
+        //        {
+        //            input1 = sr.ReadToEnd();
+        //        }
+        //        Policy pol = new JavaScriptSerializer().Deserialize<Policy>(input1);
+        //        pol.CREATED_BY = Convert.ToString(HttpContext.Current.Session["EmployeeId"]);
+        //        pol.COMPANY_ID = Convert.ToInt32(HttpContext.Current.Session["CompanyId"]);
+        //        pol.MODULE_DATABASE = Convert.ToString(HttpContext.Current.Session["ModuleDatabase"]);
+        //        if (!pol.ValidateInput())
+        //        {
+        //            PolicyResponse objResponse = new PolicyResponse();
+        //            objResponse.StatusFl = false;
+        //            objResponse.Msg = sXSSErrMsg;
+        //            return objResponse;
+        //        }
+        //        PolicyRequest pReq1 = new PolicyRequest(pol);
+        //        PolicyResponse pRes1 = pReq1.DeletePolicy();
+        //        return pRes1;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        PolicyResponse objResponse = new PolicyResponse();
+        //        objResponse.StatusFl = false;
+        //        objResponse.Msg = ex.Message;
+        //        return objResponse;
+        //    }
+        //}
     }
 }
