@@ -474,5 +474,10 @@ namespace ProcsDLL.Controllers.InsiderTrading
             remResponce = remRequest.ReminderSave();
             return remResponce;
         }
+
+        public void Display()
+        {
+            //Console.WriteLine("HI");
+        }
     }
 }
