@@ -261,59 +261,6 @@ namespace ProcsDLL.Controllers.InsiderTrading
                 return objResponse;
             }
         }
-        //[Route("GetESOPFile")]
-        //[HttpGet]
-        //[SwaggerOperation(Tags = new[] { "Benpos APIs" })]
-        //public HttpResponseMessage GetPolicyFile()
-        //{
-        //    try
-        //    {
-        //        //if (HttpContext.Current.Session.Count == 0)
-        //        //{
-        //        //    BenposResponse objResponse = new BenposResponse();
-        //        //    objResponse.StatusFl = false;
-        //        //    objResponse.Msg = "SessionExpired";
-        //        //    return objResponse;
-        //        //}
-
-        //        string sPolicyId = Convert.ToString(HttpContext.Current.Request.QueryString["PolicyId"]);
-        //        string str = CryptorEngine.Decrypt(Convert.ToString(ConfigurationManager.AppSettings["ConnectionStringIT"]), true);
-        //        string sFileNm = "";
-
-        //        using (SqlConnection sCon = new SqlConnection(str))
-        //        {
-        //            SqlCommand sCmd = new SqlCommand();
-        //            sCmd.Connection = sCon;
-        //            sCmd.CommandType = CommandType.Text;
-        //            sCon.Open();
-        //            sCmd.CommandText = "SELECT DOCUMENT FROM PROCS_INSIDER_POLICY_MSTR_ARCHIVE(NOLOCK) WHERE ID=" + sPolicyId;
-        //            sFileNm = Convert.ToString(sCmd.ExecuteScalar());
-        //        }
-        //        string sFile = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/logos/Policy/"), sFileNm);
-
-        //        byte[] fileBook = File.ReadAllBytes(sFile);// tempPathExcelFile);
-        //        MemoryStream stream = new MemoryStream();
-        //        string excelBase64String = Convert.ToBase64String(fileBook);
-        //        StreamWriter excelWriter = new StreamWriter(stream);
-        //        excelWriter.Write(excelBase64String);
-        //        excelWriter.Flush();
-        //        stream.Position = 0;
-        //        HttpResponseMessage httpResponseMessage = new HttpResponseMessage();
-        //        httpResponseMessage.Content = new StreamContent(stream);
-        //        httpResponseMessage.Content.Headers.Add("x-filename", "Policy.pdf");
-        //        httpResponseMessage.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
-        //        httpResponseMessage.Content.Headers.ContentDisposition =
-        //            new ContentDispositionHeaderValue("attachment");
-        //        httpResponseMessage.Content.Headers.ContentDisposition.FileName = "Policy.pdf";
-        //        httpResponseMessage.StatusCode = HttpStatusCode.OK;
-        //        return httpResponseMessage;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //        //return ReturnError(ErrorType.Error, errorMessage);
-        //    }
-        //}
 
         [Route("GetPolicyFile")]
         [HttpGet]
@@ -450,48 +397,5 @@ namespace ProcsDLL.Controllers.InsiderTrading
                 return httpResponseMessage;
             }
         }
-
-
-        //[Route("DeletePolicy")]
-        //[HttpPost]
-        //[SwaggerOperation(Tags = new[] { "Policy APIs" })]
-        //public PolicyResponse DeletePolicy()
-        //{
-        //    try
-        //    {
-        //        if (HttpContext.Current.Session.Count == 0)
-        //        {
-        //            PolicyResponse objResponse = new PolicyResponse();
-        //            objResponse.StatusFl = false;
-        //            objResponse.Msg = "SessionExpired";
-        //            return objResponse;
-        //        }
-        //        string input1;
-        //        using (System.IO.StreamReader sr = new System.IO.StreamReader(HttpContext.Current.Request.InputStream))
-        //        {
-        //            input1 = sr.ReadToEnd();
-        //        }
-        //        Policy pol = new JavaScriptSerializer().Deserialize<Policy>(input1);
-        //        pol.CREATED_BY = Convert.ToString(HttpContext.Current.Session["EmployeeId"]);
-        //        pol.COMPANY_ID = Convert.ToInt32(HttpContext.Current.Session["CompanyId"]);
-        //        pol.MODULE_DATABASE = Convert.ToString(HttpContext.Current.Session["ModuleDatabase"]);
-        //        if (!pol.ValidateInput())
-        //        {
-        //            PolicyResponse objResponse = new PolicyResponse();
-        //            objResponse.StatusFl = false;
-        //            objResponse.Msg = sXSSErrMsg;
-        //            return objResponse;
-        //        }
-        //        PolicyRequest pReq1 = new PolicyRequest(pol);
-        //        PolicyResponse pRes1 = pReq1.DeletePolicy();
-        //        return pRes1;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        PolicyResponse objResponse = new PolicyResponse();
-        //        objResponse.StatusFl = false;
-        //        objResponse.Msg = ex.Message;
-        //        return objResponse;
-        
     }
 }
