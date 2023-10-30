@@ -400,7 +400,9 @@ namespace ProcsDLL.Controllers.InsiderTrading
 
         public void hii()
         {
+            Console.WriteLine("Hello");
         }
+
 
         public void Display()
         {
