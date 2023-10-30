@@ -398,6 +398,9 @@ namespace ProcsDLL.Controllers.InsiderTrading
             }
         }
 
-     
+        public void Display()
+        {
+            //Console.WriteLine("HI");
+        }
     }
 }
